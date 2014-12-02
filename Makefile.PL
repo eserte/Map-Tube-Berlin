@@ -4,6 +4,8 @@ use File::ShareDir::Install;
 
 install_share dist => 'share';
 
+my $is_devel_host = defined $ENV{USER} && $ENV{USER} eq 'eserte' && $^O =~ /bsd/i && -f "../../perl.release.mk";
+
 WriteMakefile(
     NAME               => 'Map::Tube::Berlin',
     AUTHOR             => q{Slaven Rezic <srezic@cpan.org>},
@@ -37,10 +39,7 @@ WriteMakefile(
     ),
 );
 
-package MY;
-use File::ShareDir::Install;
-
-sub postamble {
+sub MY::postamble {
     my $self = shift;
     my @ret = <<'EOF';
 
@@ -56,5 +55,14 @@ share/berlin-map.xml: $(BBBIKE_DATADIR)/ubahn $(BBBIKE_DATADIR)/sbahn $(BBBIKE_D
 
 EOF
     push @ret, File::ShareDir::Install::postamble($self);
+    if ($is_devel_host) {
+	push @ret, <<'EOF';
+
+.include "../../perl.release.mk"
+.include "../../perl.git.mk"
+
+EOF
+    }
+
     join "\n", @ret;
 }
