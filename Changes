@@ -1,4 +1,7 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.02
+	- test fix for older Map::Tube versions
+
 0.01
 	- initial release
