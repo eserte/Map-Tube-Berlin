@@ -1,0 +1,5 @@
+lib/Map/Tube/Berlin.pm
+Makefile.PL
+MANIFEST			This list of files
+share/berlin-map.xml
+t/test-case-00.t
