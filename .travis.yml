@@ -1,9 +1,21 @@
 language: perl
-perl:
-  - "5.20"
-  - "5.18"
-  - "5.16"
-  - "5.14"
-  - "5.12"
-  - "5.10"
-  - "5.8"
+matrix:
+ include:
+  - perl: "5.20"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.18"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.18"
+    env: USE_MAP_TUBE_VERSION=2.26
+  - perl: "5.16"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.14"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.12"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.10"
+    env: USE_MAP_TUBE_VERSION=latest
+  - perl: "5.8"
+    env: USE_MAP_TUBE_VERSION=latest
+before_install:
+ - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
