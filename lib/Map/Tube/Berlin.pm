@@ -54,9 +54,17 @@ to I<END> is returned.
 
     print "Route: $route\n";
 
+=head1 NOTES
+
+The XML file was generated using data from the L<BBBike
+project|https://github.com/eserte/bbbike>. A Makefile rule
+C<build-map> for regenerating the XML file exists (assuming that
+BBBike was cloned/extracted into F<$HOME/src/bbbike>.
+
 =head1 BUGS
 
-It's too slow. Using A* would probably improve the performance.
+Since Map::Tube version 2.27 there's a huge performance drop, see
+L<https://rt.cpan.org/Ticket/Display.html?id=100677>.
 
 =head1 AUTHOR
 
