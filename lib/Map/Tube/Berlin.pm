@@ -12,7 +12,7 @@
 
 package Map::Tube::Berlin;
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 =head1 NAME
 
@@ -63,8 +63,8 @@ BBBike was cloned/extracted into F<$HOME/src/bbbike>.
 
 =head1 BUGS
 
-Since Map::Tube version 2.27 there's a huge performance drop, see
-L<https://rt.cpan.org/Ticket/Display.html?id=100677>.
+Station names currently have to match case. See
+L<https://rt.cpan.org/Ticket/Display.html?id=100691>.
 
 =head1 AUTHOR
 
