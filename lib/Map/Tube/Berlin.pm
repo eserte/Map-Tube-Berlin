@@ -12,7 +12,7 @@
 
 package Map::Tube::Berlin;
 
-$VERSION = '0.03';
+$VERSION = '0.04';
 
 =head1 NAME
 
@@ -61,10 +61,8 @@ project|https://github.com/eserte/bbbike>. A Makefile rule
 C<build-map> for regenerating the XML file exists (assuming that
 BBBike was cloned/extracted into F<$HOME/src/bbbike>.
 
-=head1 BUGS
-
-Station names currently have to match case. See
-L<https://rt.cpan.org/Ticket/Display.html?id=100691>.
+Case insensitive search for station names requires C<Map::Tube>
+version 2.31.
 
 =head1 AUTHOR
 

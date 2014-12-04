@@ -1,5 +1,8 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.04
+	- case insensitive node names work with Map::Tube 2.31
+
 0.03
 	- case insensitive node names don't work
 

@@ -36,9 +36,7 @@ if ($Map::Tube::VERSION < 2.27) { # return value changed with 2.27
 	is $ret, 'Schönhauser Allee (S41/S42,S8,S85,S9,U2), Gesundbrunnen (S1,S2,S25,S41/S42,U8)', 'special case: Ringbahn';
     }
 
-    TODO: {
-	todo_skip "Does not work, see https://rt.cpan.org/Ticket/Display.html?id=100691", 1;
-
+    if ($Map::Tube::VERSION >= 2.31) {
 	my $ret = $map->get_shortest_route('platz der luftbrücke', 'möckernbrücke');
 	isa_ok $ret, 'Map::Tube::Route';
 	is $ret, 'Platz der Luftbrücke (U6), Mehringdamm (U6,U7), Möckernbrücke (U1,U7)', ' case-insensitive search';
