@@ -6,7 +6,7 @@ matrix:
   - perl: "5.18"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.18"
-    env: USE_MAP_TUBE_VERSION=2.26
+    env: USE_MAP_TUBE_VERSION=2.38
   - perl: "5.16"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.14"
