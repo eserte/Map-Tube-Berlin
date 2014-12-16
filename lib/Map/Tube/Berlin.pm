@@ -61,9 +61,6 @@ project|https://github.com/eserte/bbbike>. A Makefile rule
 C<build-map> for regenerating the XML file exists (assuming that
 BBBike was cloned/extracted into F<$HOME/src/bbbike>.
 
-Case insensitive search for station names requires C<Map::Tube>
-version 2.31.
-
 =head1 AUTHOR
 
 Slaven Rezic
