@@ -6,3 +6,4 @@ MANIFEST.SKIP
 README
 share/berlin-map.xml
 t/test-case-00.t
+t/test-case-02.t
