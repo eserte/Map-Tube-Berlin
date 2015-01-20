@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Created by create_map_tube_xml.pl (part of BBBike)-->
 <tube>
   <stations>
     <station id="S127" name="Adenauerplatz" line="U7" link="S128,S126"/>
     <station id="S281" name="Adlershof" line="S45,S46,S8,S85,S9" link="S309,S280,S282"/>
     <station id="S099" name="Afrikanische Str." line="U6" link="S098,S100"/>
     <station id="S259" name="Ahrensfelde" line="S7" link="S260"/>
-    <station id="S033" name="Alexanderplatz" line="S3,S5,S7,S75,U2,U5,U8" link="S240,S147,S033,S032,S034,S057,S148"/>
+    <station id="S033" name="Alexanderplatz" line="S3,S5,S7,S75,U2,U5,U8" link="S240,S147,S032,S034,S057,S148"/>
     <station id="S079" name="Alt-Mariendorf" line="U6" link="S080"/>
     <station id="S223" name="Alt-Reinickendorf" line="S25" link="S159,S192"/>
     <station id="S105" name="Alt-Tegel" line="U6" link="S104"/>
