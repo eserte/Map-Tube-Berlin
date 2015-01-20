@@ -10,7 +10,7 @@ isa_ok $map, 'Map::Tube::Berlin';
 
 {
   my @selflinked;
-  for my $nodeId( keys $map->nodes() ) {
+  for my $nodeId( keys %{ $map->nodes() } ) {
     push( @selflinked, $nodeId ) if grep { $_ eq $nodeId } split( ',', $map->get_node_by_id($nodeId)->link() );
   }
   is( scalar(@selflinked), 0, 'Stations should not be linked to themselves: ' . join(' ', @selflinked) );
@@ -18,7 +18,7 @@ isa_ok $map, 'Map::Tube::Berlin';
 
 {
   my @multilined;
-  for my $nodeId( keys $map->nodes() ) {
+  for my $nodeId( keys %{ $map->nodes() } ) {
     my %lines;
     $lines{$_}++ for split( ',', $map->get_node_by_id($nodeId)->line() );
     my $maxlink = 0;
@@ -30,7 +30,7 @@ isa_ok $map, 'Map::Tube::Berlin';
 
 {
   my @multilinked;
-  for my $nodeId( keys $map->nodes() ) {
+  for my $nodeId( keys %{ $map->nodes() } ) {
     my %lines;
     $lines{$_}++ for split( ',', $map->get_node_by_id($nodeId)->link() );
     my $maxlink = 0;
@@ -41,7 +41,7 @@ isa_ok $map, 'Map::Tube::Berlin';
 }
 {
   my %names;
-  for my $nodeId( keys $map->nodes() ) {
+  for my $nodeId( keys %{ $map->nodes() } ) {
     my $name = $map->get_node_by_id($nodeId)->name();
     $names{$name} ||= [ ];
     push( @{ $names{$name} }, $nodeId);
