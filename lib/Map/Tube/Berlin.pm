@@ -3,7 +3,7 @@
 #
 # Author: Slaven Rezic
 #
-# Copyright (C) 2014 Slaven Rezic. All rights reserved.
+# Copyright (C) 2014,2015 Slaven Rezic. All rights reserved.
 # This package is free software; you can redistribute it and/or
 # modify it under the same terms as Perl itself.
 #
@@ -12,7 +12,7 @@
 
 package Map::Tube::Berlin;
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 
 =head1 NAME
 
