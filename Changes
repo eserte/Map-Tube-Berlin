@@ -1,5 +1,8 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.07
+	- test fix
+
 0.06
 	- map fix (Alexanderplatz neighbors, problem reported
 	  by Gisbert W. Selke)
