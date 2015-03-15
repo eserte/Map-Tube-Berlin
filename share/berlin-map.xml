@@ -52,7 +52,7 @@
     <station id="S169" name="Bundesplatz" line="S41/S42,S46,U9" link="S170,S124,S018,S056"/>
     <station id="S077" name="Bundestag" line="U55" link="S076,S078"/>
     <station id="S042" name="Bülowstr." line="U2" link="S008,S010"/>
-    <station id="S244" name="Charlottenburg" line="S3,S5,S7,S75" link="S243,S212"/>
+    <station id="S244" name="Charlottenburg" line="S3,S5,S7,S75" link="S243,S212" other_link="Street:S128"/>
     <station id="S072" name="Cottbusser Platz" line="U5" link="S071,S073"/>
     <station id="S022" name="Dahlem-Dorf" line="U3" link="S021,S023"/>
     <station id="S045" name="Deutsche Oper" line="U2" link="S046,S044"/>
@@ -299,7 +299,7 @@
     <station id="S310" name="Wildau" line="S46" link="S278,S311"/>
     <station id="S230" name="Wilhelmshagen" line="S3" link="S231,S229"/>
     <station id="S193" name="Wilhelmsruh" line="S1,S85" link="S161,S192"/>
-    <station id="S128" name="Wilmersdorfer Str." line="U7" link="S127,S046"/>
+    <station id="S128" name="Wilmersdorfer Str." line="U7" link="S127,S046" other_link="Street:S244"/>
     <station id="S161" name="Wittenau" line="S1,S85,U8" link="S194,S160,S193"/>
     <station id="S011" name="Wittenbergplatz" line="U1,U2,U3" link="S043,S010,S012,S014"/>
     <station id="S191" name="Wollankstr." line="S1,S25,S85" link="S190,S192"/>

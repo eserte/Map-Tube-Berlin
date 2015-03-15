@@ -40,6 +40,15 @@ like($@, qr/\QMap::Tube::get_shortest_route(): ERROR: Received invalid TO node '
     is fix_whitespace($ret), 'Platz der Luftbrücke (U6), Mehringdamm (U6,U7), Möckernbrücke (U1,U7)', ' case-insensitive search';
 }
 
+SKIP: {
+    skip "other_link feature requires Map::Tube 2.89", 2
+	if $Map::Tube::VERSION < 2.89;
+
+    my $ret = $map->get_shortest_route('Adenauerplatz', 'Savignyplatz');
+    isa_ok $ret, 'Map::Tube::Route';
+    is fix_whitespace($ret), 'Adenauerplatz (U7), Wilmersdorfer Str. (U7, Street), Charlottenburg (S3,S5,S7,S75, Street), Savignyplatz (S3,S5,S7,S75)', 'with other_link';
+}
+
 # Normalize stringification: earlier Map::Tube versions (approx. 2.70
 # and earlier) had no whitespace in line number lists.
 sub fix_whitespace ($) {
