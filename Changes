@@ -1,5 +1,10 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.08
+	- support other_link feature (changing between
+	  Wilmersdorfer Str. and Charlottenburg) --- this
+	  feature requires Map::Tube 2.89 (not forced)
+
 0.07
 	- test fix
 
