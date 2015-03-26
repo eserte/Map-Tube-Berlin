@@ -4,6 +4,7 @@ Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
 README
+inc/berlin-map-lines.inc
 share/berlin-map.xml
 t/test-case-00.t
 t/test-case-02.t
