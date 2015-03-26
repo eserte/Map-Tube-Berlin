@@ -23,3 +23,4 @@ matrix:
     env: USE_MAP_TUBE_VERSION=latest
 before_install:
  - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
+sudo: false
