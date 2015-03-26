@@ -245,7 +245,7 @@
     <station id="S117" name="Rathaus Neukölln" line="U7" link="S116,S118"/>
     <station id="S160" name="Rathaus Reinickendorf" line="U8" link="S159,S161"/>
     <station id="S055" name="Rathaus Schöneberg" line="U4" link="S056,S054"/>
-    <station id="S140" name="Rathaus Spandau" line="U7" link="S139"/>
+    <station id="S140" name="Rathaus Spandau" line="U7" link="S139" other_link="Street:S277"/>
     <station id="S173" name="Rathaus Steglitz" line="S1,U9" link="S172,S182,S181"/>
     <station id="S098" name="Rehberge" line="U6" link="S099,S097"/>
     <station id="S094" name="Reinickendorfer Str." line="U6" link="S093,S095"/>
@@ -280,7 +280,7 @@
     <station id="S134" name="Siemensdamm" line="U7" link="S133,S135"/>
     <station id="S208" name="Sonnenallee" line="S41/S42" link="S207,S115"/>
     <station id="S047" name="Sophie-Charlotte-Platz" line="U2" link="S046,S048"/>
-    <station id="S277" name="Spandau" line="S75" link="S276"/>
+    <station id="S277" name="Spandau" line="S75" link="S276" other_link="Street:S140"/>
     <station id="S015" name="Spichernstr." line="U3,U9" link="S016,S168,S012,S014"/>
     <station id="S304" name="Spindlersfeld" line="S47" link="S305"/>
     <station id="S036" name="Spittelmarkt" line="U2" link="S035,S037"/>
