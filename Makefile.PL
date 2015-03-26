@@ -48,9 +48,9 @@ BBBIKE_DATADIR= $(BBBIKE_DIR)/data
 
 build-map: share/berlin-map.xml
 
-share/berlin-map.xml: $(BBBIKE_DATADIR)/ubahn $(BBBIKE_DATADIR)/sbahn $(BBBIKE_DATADIR)/ubahnhof $(BBBIKE_DATADIR)/sbahnhof
+share/berlin-map.xml: $(BBBIKE_DATADIR)/ubahn $(BBBIKE_DATADIR)/sbahn $(BBBIKE_DATADIR)/ubahnhof $(BBBIKE_DATADIR)/sbahnhof inc/berlin-map-lines.inc
 	mkdir -p share
-	$(BBBIKE_DIR)/miscsrc/create_map_tube_xml.pl > share/berlin-map.xml~
+	$(BBBIKE_DIR)/miscsrc/create_map_tube_xml.pl --include-lines=inc/berlin-map-lines.inc > share/berlin-map.xml~
 	mv share/berlin-map.xml~ share/berlin-map.xml
 
 EOF
