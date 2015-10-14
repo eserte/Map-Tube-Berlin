@@ -1,5 +1,8 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.10
+	- no code change, just a test fix
+
 0.09
 	- line colors (provided by GWS, RT #103106)
 	- link Spandau and Rathaus Spandau
