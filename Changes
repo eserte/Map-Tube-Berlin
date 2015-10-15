@@ -1,7 +1,10 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.11
+	- another test fix, for Map::Tube 3.06 (see RT #107752)
+
 0.10
-	- no code change, just a test fix
+	- no code change, just a test fix for Map::Tube 3.05
 
 0.09
 	- line colors (provided by GWS, RT #103106)
