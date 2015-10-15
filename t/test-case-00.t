@@ -7,20 +7,24 @@ use Map::Tube::Berlin;
 
 sub fix_whitespace ($);
 
+my $missing_station_rx      = qr{(?:\QERROR: Either FROM/TO node is undefined\E|\QMap::Tube::get_shortest_route(): ERROR: Missing Station Name.\E)};
+my $invalid_from_station_rx = qr/(?:\QMap::Tube::get_shortest_route(): ERROR: Received invalid FROM node 'XYZ'\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid station name.\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid Station Name\E)/;
+my $invalid_to_station_rx   = qr/(?:\QMap::Tube::get_shortest_route(): ERROR: Received invalid TO node 'XYZ'\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid station name.\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid Station Name\E)/;
+
 my $map = Map::Tube::Berlin->new();
 isa_ok $map, 'Map::Tube::Berlin';
 
 eval { $map->get_shortest_route(); };
-like($@, qr/ERROR: Either FROM\/TO node is undefined/);
+like($@, $missing_station_rx);
 
 eval { $map->get_shortest_route('Friedrichstr.'); };
-like($@, qr/ERROR: Either FROM\/TO node is undefined/);
+like($@, $missing_station_rx);
 
 eval { $map->get_shortest_route('XYZ', 'Friedrichstr.'); };
-like($@, qr/(?:\QMap::Tube::get_shortest_route(): ERROR: Received invalid FROM node 'XYZ'\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid station name.\E)/);
+like($@, $invalid_from_station_rx);
 
 eval { $map->get_shortest_route('Friedrichstr.', 'XYZ'); };
-like($@, qr/(?:\QMap::Tube::get_shortest_route(): ERROR: Received invalid TO node 'XYZ'\E|\QMap::Tube::get_node_by_name(): ERROR: Invalid station name.\E)/);
+like($@, $invalid_to_station_rx);
 
 {
     my $ret = $map->get_shortest_route('Friedrichstr.', 'Alexanderplatz');
