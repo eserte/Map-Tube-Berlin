@@ -20,8 +20,7 @@ matrix:
   - perl: "5.10"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.8"
-    # https://rt.cpan.org/Ticket/Display.html?id=107785
-    env: USE_MAP_TUBE_VERSION=3.00
+    env: USE_MAP_TUBE_VERSION=latest
 before_install:
  - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
 sudo: false
