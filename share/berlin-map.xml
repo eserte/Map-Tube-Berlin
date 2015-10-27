@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Created by create_map_tube_xml.pl (part of BBBike)-->
-<tube>
+<tube name="Berlin Metro">
   <lines>
     <line id="S1" name="S1" color="#DD6CA6"/>
     <line id="S2" name="S2" color="#007B3D"/>
