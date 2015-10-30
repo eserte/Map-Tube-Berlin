@@ -1,5 +1,10 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.12
+	- no code changes; just updated/added tests and add map name to xml data
+	  <https://github.com/eserte/Map-Tube-Berlin/pull/1>
+	  Minimum required Map::Tube version is now 3.11
+
 0.11
 	- another test fix, for Map::Tube 3.06 (see RT #107752)
 
