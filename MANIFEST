@@ -8,3 +8,4 @@ inc/berlin-map-lines.inc
 share/berlin-map.xml
 t/test-case-00.t
 t/test-case-02.t
+t/map.t
