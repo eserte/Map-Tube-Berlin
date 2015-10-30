@@ -3,14 +3,11 @@ matrix:
  include:
   - perl: "5.20"
     env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.20"
-    # the version before other_link feature
-    env: USE_MAP_TUBE_VERSION=2.88
   - perl: "5.18"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.18"
     # test with minimum version
-    env: USE_MAP_TUBE_VERSION=2.38
+    env: USE_MAP_TUBE_VERSION=3.11
   - perl: "5.16"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.14"
