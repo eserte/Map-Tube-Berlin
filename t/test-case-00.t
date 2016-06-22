@@ -50,7 +50,11 @@ SKIP: {
 
     my $ret = $map->get_shortest_route('Adenauerplatz', 'Savignyplatz');
     isa_ok $ret, 'Map::Tube::Route';
-    is fix_whitespace($ret), 'Adenauerplatz (U7), Wilmersdorfer Str. (U7), Charlottenburg (S3,S5,S7,S75), Savignyplatz (S3,S5,S7,S75)', 'with other_link';
+    if ($Map::Tube::VERSION >= 3.13) {
+	is fix_whitespace($ret), 'Adenauerplatz (U7), Wilmersdorfer Str. (Street,U7), Charlottenburg (S3,S5,S7,S75, Street), Savignyplatz (S3,S5,S7,S75)', 'with other_link';
+    } else {
+	is fix_whitespace($ret), 'Adenauerplatz (U7), Wilmersdorfer Str. (U7), Charlottenburg (S3,S5,S7,S75), Savignyplatz (S3,S5,S7,S75)', 'with other_link';
+    }
 }
 
 # Normalize stringification: earlier Map::Tube versions (approx. 2.70
