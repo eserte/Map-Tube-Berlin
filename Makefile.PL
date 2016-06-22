@@ -6,6 +6,25 @@ install_share dist => 'share';
 
 my $is_devel_host = defined $ENV{USER} && $ENV{USER} eq 'eserte' && $^O =~ /bsd/i && -f "../../perl.release.mk";
 
+my $build_requires = {
+    BUILD_REQUIRES => {
+        'Test::More' => 0
+    },
+};
+my $prereq_pm = {
+    PREREQ_PM => {
+        'Moo'              => 0,
+        'namespace::clean' => 0,
+        'File::Share'      => 0,
+        'Map::Tube'        => '3.11',
+    }
+};
+
+eval { ExtUtils::MakeMaker->VERSION(6.64) } ?
+ ($build_requires->{TEST_REQUIRES} = { 'Test::Map::Tube' => '0.17' })
+ :
+ ($prereq_pm->{PREREQ_PM}->{'Test::Map::Tube'} = '0.17');
+
 WriteMakefile(
     NAME               => 'Map::Tube::Berlin',
     AUTHOR             => q{Slaven Rezic <srezic@cpan.org>},
@@ -17,15 +36,8 @@ WriteMakefile(
         'ExtUtils::MakeMaker' => 0,
         'File::ShareDir::Install' => 0,
     },
-    BUILD_REQUIRES   => {
-        'Test::More' => 0,
-    },
-    PREREQ_PM => {
-        'Moo'              => 0,
-        'namespace::clean' => 0,
-        'File::Share'      => 0,
-        'Map::Tube'        => '3.11',
-    },
+    %$build_requires,
+    %$prereq_pm,
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         resources => {
