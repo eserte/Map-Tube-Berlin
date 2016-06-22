@@ -1,5 +1,9 @@
 Revision history for Perl extension Map::Tube::Berlin.
 
+0.14  2016-06-22
+	- no code changes; just use Test::Map::Tube exclusively
+	  (change provided by manwar)
+
 0.13  2016-06-22
 	- no code changes; just updated tests for Map::Tube 3.13
 
