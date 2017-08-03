@@ -10,6 +10,8 @@ install:
   - if not exist "C:\strawberry" cinst --allow-empty-checksums strawberryperl
   - set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
   - cd C:\projects\%APPVEYOR_PROJECT_NAME%
+  # hack for Test::Trap @ Windows test failures, see https://rt.cpan.org/Ticket/Display.html?id=105125
+  - set HARNESS_IS_VERBOSE=0
   - cpanm --installdeps .
 
 build_script:
