@@ -1,15 +1,15 @@
 language: perl
 matrix:
  include:
-  - perl: "5.20"
+  - perl: "5.26"
     env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.20"
+  - perl: "5.24"
     env: WITH_TEST_MAP_TUBE=1
-  - perl: "5.18"
+  - perl: "5.20"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.18"
     # test with minimum version
-    env: USE_MAP_TUBE_VERSION=3.11
+    env: USE_MAP_TUBE_VERSION=3.32
   - perl: "5.16"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.14"
