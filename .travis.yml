@@ -25,6 +25,10 @@ before_install:
  - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
  - '[ "$WITH_TEST_MAP_TUBE" = 1 ]           && cpanm --quiet --notest Test::Map::Tube                     || true'
 
+after_script:
+  - make distcheck
+  - HARNESS_OPTIONS=j4:c make disttest
+
 branches:
  except:
   - /appveyor/
