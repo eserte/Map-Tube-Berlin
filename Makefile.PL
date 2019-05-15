@@ -16,7 +16,7 @@ my $prereq_pm = {
         'Moo'              => 0,
         'namespace::clean' => 0,
         'File::Share'      => 0,
-        'Map::Tube'        => '3.57',
+        'Map::Tube'        => '3.62',
     }
 };
 
