@@ -9,7 +9,7 @@ matrix:
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.18"
     # test with minimum version
-    env: USE_MAP_TUBE_VERSION=3.57
+    env: USE_MAP_TUBE_VERSION=3.62
   - perl: "5.16"
     env: USE_MAP_TUBE_VERSION=latest
   - perl: "5.14"
