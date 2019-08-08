@@ -1,26 +1,36 @@
 language: perl
-dist: precise
 matrix:
  include:
+  - perl: "5.30"
+    dist: xenial
   - perl: "5.26"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: xenial
   - perl: "5.24"
     env: WITH_TEST_MAP_TUBE=1
+    dist: xenial
   - perl: "5.20"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
   - perl: "5.18"
     # test with minimum version
     env: USE_MAP_TUBE_VERSION=3.62
+    dist: precise
   - perl: "5.16"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
   - perl: "5.14"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
   - perl: "5.12"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
   - perl: "5.10"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
   - perl: "5.8"
     env: USE_MAP_TUBE_VERSION=latest
+    dist: precise
 
 before_install:
  - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
