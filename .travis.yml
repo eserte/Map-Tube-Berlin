@@ -43,4 +43,6 @@ after_script:
 branches:
  except:
   - /appveyor/
+  - /github-actions/
+  - /doozer/
 sudo: false

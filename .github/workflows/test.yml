@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - '*travis*'
+      - '*appveyor*'
+      - '*doozer*'
+
+jobs:
+
+  test_on_host:
+    name: ${{ matrix.os }} ${{ matrix.add_name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+     matrix:
+       include:
+         - os:                       'ubuntu-20.04'
+           add_name:                 '- plain'
+           use_map_tube_version:     ''
+           with_test_map_tube:       0
+         - os:                       'ubuntu-20.04'
+           add_name:                 '- with Map::Tube 3.62'
+           use_map_tube_version:     '3.62'
+           with_test_map_tube:       0
+         - os:                       'ubuntu-20.04'
+           add_name:                 '- with Test::Map::Tube'
+           use_map_tube_version:     ''
+           with_test_map_tube:       1
+         - os:                       'ubuntu-18.04'
+           add_name:                 '- plain'
+           use_map_tube_version:     ''
+           with_test_map_tube:       0
+         - os:                       'ubuntu-16.04'
+           add_name:                 '- plain'
+           use_map_tube_version:     ''
+           with_test_map_tube:       0
+    steps:
+    - name: apt hacks
+      # /etc/apt/sources.list should be sufficient; all the other repositories are possibly problematic
+      run: |
+        sudo rm -f /etc/apt/sources.list.d/*.list
+        sudo apt-get update -qq
+      if: "startsWith(matrix.os, 'ubuntu-')"
+    - uses: actions/checkout@v2
+    - name: Build and test
+      env:
+        USE_MAP_TUBE_VERSION:     ${{ matrix.use_map_tube_version }}
+        WITH_TEST_MAP_TUBE:       ${{ matrix.with_test_map_tube }}
+      run: |
+        set -e
+        sudo apt-get install -q --no-install-recommends cpanminus
+        [ "$USE_MAP_TUBE_VERSION" != "latest" -a "$USE_MAP_TUBE_VERSION" != "" ] && cpanm --sudo --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true
+        [ "$WITH_TEST_MAP_TUBE" = 1 ]                                            && cpanm --sudo --quiet --notest Test::Map::Tube                     || true
+        # XXX need to manually install configure_requires deps --- META.* does not exist at this point and cannot be generated
+        cpanm --sudo --quiet --notest File::ShareDir::Install
+        cpanm --sudo --quite --installdeps .
+        perl Makefile.PL
+        make distcheck
+        HARNESS_OPTIONS=j4:c make disttest
+      if: "!startsWith(matrix.os,'windows-')"
