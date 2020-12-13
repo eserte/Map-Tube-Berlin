@@ -54,7 +54,7 @@ jobs:
         [ "$WITH_TEST_MAP_TUBE" = 1 ]                                            && cpanm --sudo --quiet --notest Test::Map::Tube                     || true
         # XXX need to manually install configure_requires deps --- META.* does not exist at this point and cannot be generated
         cpanm --sudo --quiet --notest File::ShareDir::Install
-        cpanm --sudo --quite --installdeps .
+        cpanm --sudo --quiet --notest --installdeps .
         perl Makefile.PL
         make distcheck
         HARNESS_OPTIONS=j4:c make disttest
