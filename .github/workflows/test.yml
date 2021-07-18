@@ -60,3 +60,31 @@ jobs:
         make distcheck
         HARNESS_OPTIONS=j4:c make disttest
       if: "!startsWith(matrix.os,'windows-')"
+
+  test_in_container:
+    name: Test with perl ${{ matrix.perlimage }}
+    runs-on: ubuntu-latest
+    container: perl:${{ matrix.perlimage }}
+    strategy:
+      matrix:
+        include:
+## some dependencies do not work with 5.8.x
+#          - perlimage: 5.8.9-threaded-stretch
+          - perlimage: 5.10.1-buster
+          - perlimage: 5.12.5-stretch
+          - perlimage: 5.14.4-stretch
+          - perlimage: 5.16.3-buster
+          - perlimage: 5.18.4-buster
+          - perlimage: 5.22.4-stretch
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: "build and test"
+      run: |
+        cpanm --quiet --notest File::ShareDir::Install
+        perl Makefile.PL
+        make distdir
+        cd Map-Tube-Berlin-*
+        cpanm --quiet --installdeps --notest .
+        perl Makefile.PL
+        make all test
