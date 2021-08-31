@@ -32,10 +32,6 @@ jobs:
            add_name:                 '- plain'
            use_map_tube_version:     ''
            with_test_map_tube:       0
-         - os:                       'ubuntu-16.04'
-           add_name:                 '- plain'
-           use_map_tube_version:     ''
-           with_test_map_tube:       0
     steps:
     - name: apt hacks
       # /etc/apt/sources.list should be sufficient; all the other repositories are possibly problematic
