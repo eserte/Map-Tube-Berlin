@@ -28,7 +28,7 @@ jobs:
            add_name:                 '- with Test::Map::Tube'
            use_map_tube_version:     ''
            with_test_map_tube:       1
-         - os:                       'ubuntu-18.04'
+         - os:                       'ubuntu-22.04'
            add_name:                 '- plain'
            use_map_tube_version:     ''
            with_test_map_tube:       0
