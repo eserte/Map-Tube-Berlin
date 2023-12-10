@@ -59,7 +59,7 @@ to I<END> is returned.
 The XML file was generated using data from the L<BBBike
 project|https://github.com/eserte/bbbike>. A Makefile rule
 C<build-map> for regenerating the XML file exists (assuming that
-BBBike was cloned/extracted into F<$HOME/src/bbbike>.
+BBBike was cloned/extracted into F<$HOME/src/bbbike>).
 
 =head1 AUTHOR
 
