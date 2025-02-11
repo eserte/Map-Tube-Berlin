@@ -17,22 +17,18 @@ jobs:
     strategy:
      matrix:
        include:
-         - os:                       'ubuntu-20.04'
-           add_name:                 '- plain'
-           use_map_tube_version:     ''
-           with_test_map_tube:       0
-         - os:                       'ubuntu-20.04'
-           add_name:                 '- with Map::Tube 3.62'
-           use_map_tube_version:     '3.62'
-           with_test_map_tube:       0
-         - os:                       'ubuntu-20.04'
-           add_name:                 '- with Test::Map::Tube'
-           use_map_tube_version:     ''
-           with_test_map_tube:       1
          - os:                       'ubuntu-22.04'
            add_name:                 '- plain'
            use_map_tube_version:     ''
            with_test_map_tube:       0
+         - os:                       'ubuntu-22.04'
+           add_name:                 '- with Map::Tube 3.62'
+           use_map_tube_version:     '3.62'
+           with_test_map_tube:       0
+         - os:                       'ubuntu-22.04'
+           add_name:                 '- with Test::Map::Tube'
+           use_map_tube_version:     ''
+           with_test_map_tube:       1
          - os:                       'ubuntu-24.04'
            add_name:                 '- with Test::Map::Tube'
            use_map_tube_version:     ''
