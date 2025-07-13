@@ -69,7 +69,8 @@ jobs:
 #          - perlimage: 5.8.9-threaded-stretch
 ## dependency Getopt-Long-Descriptive does not work anymore with 5.10
 #          - perlimage: 5.10.1-buster
-          - perlimage: 5.12.5-stretch
+## Map-Tube 4.09 and later does not work anymore with 5.12
+#          - perlimage: 5.12.5-stretch
           - perlimage: 5.14.4-stretch
           - perlimage: 5.16.3-buster
           - perlimage: 5.18.4-buster
